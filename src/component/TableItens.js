@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import ApiContext from '../context/ApiContext';
 
+// TableItens e TableData feito consultando o rep
+// https://github.com/tryber/sd-016-b-project-starwars-planets-search/pull/46
+
 function TableItens() {
   const { data } = useContext(ApiContext);
   console.log(data);
