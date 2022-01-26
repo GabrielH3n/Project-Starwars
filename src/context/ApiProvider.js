@@ -4,6 +4,7 @@ import ApiContext from './ApiContext';
 
 function ApiProvider({ children }) {
   const [Planets, setPlanets] = useState([]);
+  const [NameFilter, SetNameFilter] = useState('');
   console.log(Planets);
 
   useEffect(() => {
@@ -14,6 +15,8 @@ function ApiProvider({ children }) {
 
   const context = {
     data: Planets,
+    NameFilter,
+    SetNameFilter,
   };
   return (
     <ApiContext.Provider value={ context }>{ children }</ApiContext.Provider>

@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import ApiContext from '../context/ApiContext';
 
 function Header() {
+  const { NameFilter, SetNameFilter } = useContext(ApiContext);
   return (
     <div>
       <h1> Projeto Star Wars - Gabriel</h1>
-      <input type="text" placeholder="Filtrar por nome" />
+      <input
+        type="text"
+        placeholder="Filtrar por nome"
+        value={ NameFilter }
+        onChange={ (event) => SetNameFilter(event.target.value) }
+        data-testid="name-filter"
+      />
       <select>
         <option value="PopulationOption">Population</option>
       </select>

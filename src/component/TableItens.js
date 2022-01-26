@@ -5,7 +5,7 @@ import ApiContext from '../context/ApiContext';
 // https://github.com/tryber/sd-016-b-project-starwars-planets-search/pull/46
 
 function TableItens() {
-  const { data } = useContext(ApiContext);
+  const { data, NameFilter } = useContext(ApiContext);
   console.log(data);
   const planetsData = (planet) => {
     const properties = Object.keys(data[0]).filter((key) => key !== 'residents');
@@ -16,10 +16,21 @@ function TableItens() {
     ));
   };
 
+  const ShowPlanet = (planet) => {
+    const { name } = planet;
+    if (!name.toLowerCase().includes(NameFilter.toLowerCase())) {
+      return false;
+    }
+
+    return true;
+  };
+
   const TableData = () => data.map((planet) => (
-    <tr key={ planet.name }>
-      {planetsData(planet)}
-    </tr>
+    ShowPlanet(planet) && (
+      <tr key={ planet.name }>
+        {planetsData(planet)}
+      </tr>
+    )
   ));
 
   return (
