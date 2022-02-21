@@ -45,9 +45,9 @@ Durante o desenvolvimento desse projeto pude colocar em pratica o meu ciheciment
 ## Começar A testar a aplicação.
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-016-b-project-starwars-planets-search.git`
+  * `git clone git@github.com:GabrielH3n/Project-Starwars.git`
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-016-b-project-starwars-planets-search`
+    * `cd Project-Starwars`
 
 2. Instale as dependências e inicialize o projeto
   * Instale as dependências:
